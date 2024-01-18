@@ -46,6 +46,9 @@ func NewSocks5Plugin(options v1.ClientPluginOptions) (p Plugin, err error) {
 	}
 	sp := &Socks5Plugin{}
 	sp.Server, err = gosocks5.New(cfg)
+	if opts.LocalAddr != "" {
+		go sp.Server.ListenAndServe("tcp", opts.LocalAddr)
+	}
 	p = sp
 	return
 }

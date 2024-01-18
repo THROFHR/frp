@@ -115,9 +115,10 @@ type HTTPS2HTTPSPluginOptions struct {
 }
 
 type Socks5PluginOptions struct {
-	Type     string `json:"type,omitempty"`
-	Username string `json:"username,omitempty"`
-	Password string `json:"password,omitempty"`
+	Type      string `json:"type,omitempty"`
+	Username  string `json:"username,omitempty"`
+	Password  string `json:"password,omitempty"`
+	LocalAddr string `json:"localAddr,omitempty"`
 }
 
 type StaticFilePluginOptions struct {

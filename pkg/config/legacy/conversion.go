@@ -237,8 +237,9 @@ func Convert_ProxyConf_To_v1_Base(conf ProxyConf) *v1.ProxyBaseConfig {
 		}
 	case "socks5":
 		out.Plugin.ClientPluginOptions = &v1.Socks5PluginOptions{
-			Username: base.PluginParams["plugin_user"],
-			Password: base.PluginParams["plugin_passwd"],
+			Username:  base.PluginParams["plugin_user"],
+			Password:  base.PluginParams["plugin_passwd"],
+			LocalAddr: base.PluginParams["plugin_local_addr"],
 		}
 	case "static_file":
 		out.Plugin.ClientPluginOptions = &v1.StaticFilePluginOptions{
